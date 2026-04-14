@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium To-Do List</title>
+    <meta name="description" content="A glassmorphism-inspired, high-performance to-do list application for organizing tasks with title and description.">
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.400.0/dist/umd/lucide.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Premium Navbar -->
+    <header class="navbar">
+        <div class="navbar-content">
+            <div class="logo">
+                <i data-lucide="check-circle" class="logo-icon"></i>
+                <span class="navbar-title">TaskFlow <span class="badge-pro">PRO</span></span>
+            </div>
+            <div class="nav-links">
+               <span class="time-display" id="current-time">00:00:00</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Layout -->
+    <main class="main-layout">
+
+        <!-- Left Column: Input Form -->
+        <aside class="form-container">
+            <div class="card-glass form-card">
+                <div class="card-header">
+                    <i data-lucide="plus-square" class="header-icon"></i>
+                    <h2>New Task</h2>
+                </div>
+                <form id="todo-form">
+                    <div class="input-group">
+                        <label for="task-title">Task Title</label>
+                        <input
+                            type="text"
+                            id="task-title"
+                            placeholder="Enter task name..."
+                            required
+                            autocomplete="off"
+                        >
+                    </div>
+                    <div class="input-group">
+                        <label for="task-desc">Description</label>
+                        <textarea
+                            id="task-desc"
+                            placeholder="Add more details here..."
+                            required
+                        ></textarea>
+                    </div>
+                    <button type="submit" id="save-btn" class="btn-primary">
+                        <span>Save Task</span>
+                        <i data-lucide="save"></i>
+                    </button>
+                </form>
+            </div>
+        </aside>
+
+        <!-- Right Column: Task List -->
+        <section class="list-container">
+            <div class="list-header-group">
+                <div class="col-title">TITLE</div>
+                <div class="col-desc">DESCRIPTION</div>
+                <div class="col-action">ACTION</div>
+            </div>
+            
+            <div id="empty-state" class="empty-state">
+                <i data-lucide="clipboard-list" class="empty-icon"></i>
+                <p>Your task list is empty. Start by adding a task on the left!</p>
+            </div>
+
+            <ul id="task-list" class="task-list">
+                <!-- Task items will be dynamically injected here -->
+            </ul>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
